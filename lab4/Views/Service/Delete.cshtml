@@ -1,0 +1,24 @@
+﻿@model Services
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete book</h1>
+<form method="post" asp-action="Delete">
+	<input asp-for="ID" hidden />
+	<div class="form-group row">
+	  <label>ServiceName</label>
+	  <div class="col-sm-10">
+		  <input asp-for="ServiceName" disabled />
+	  </div>
+  </div>
+  <div class="form-group row">
+		<label>Description</label>
+		<div class="col-sm-10">
+			<input asp-for="ServiceDescription" disabled />
+		</div>
+  </div>
+  <div class="col-sm-10 pt-2">
+	  <button type="submit">Delete book</button>
+  </div>
+</form>

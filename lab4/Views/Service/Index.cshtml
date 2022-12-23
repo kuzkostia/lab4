@@ -1,0 +1,37 @@
+﻿@model IEnumerable<lab4.Models.Services>
+@{
+    ViewData["Title"] = "Services";
+}
+<div class="d-flex justify-content-between align-items-center pb-2">
+    <h1 class="float-lef">Services</h1>
+    <a asp-controller="Service" asp-action="Create" class="btn btn-success float-right">Add service</a>
+</div>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ServiceName</th>
+      <th scope="col">Description</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+       @foreach(var service in Model)
+        {
+            <tr>
+                <th scope="row">
+                    @service.ServiceName
+                </th>
+                <td>
+                    @service.ServiceDescription
+                </td>
+                <td>
+                    <a asp-controller="Service" asp-action="Edit" asp-route-id="@service.ID" class="btn btn-secondary">Edit service</a>
+                </td>
+                <td>
+                    <a asp-controller="Service" asp-action="Delete" asp-route-id="@service.ID" class="btn btn-danger">Delete service</a>
+                </td>
+            </tr>
+        }
+  </tbody>
+</table>
